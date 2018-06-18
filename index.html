@@ -2,36 +2,17 @@
 <html>
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
-<script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
+<!-- <script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script> -->
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='sourceType: webcam;'>
     	<a-assets>
-			<a-asset id="3dc" src="https://raw.githubusercontent.com/12xq4/armarker/master/CesiumMan.glb"></a-asset>
+			<a-asset-item id="3dc" src="https://raw.githubusercontent.com/12xq4/armarker/master/3d.glb"></a-asset>
 		</a-assets>
-		<!-- define your markers -->
 		<a-marker type="pattern" url="https://raw.githubusercontent.com/12xq4/armarker/master/WB-sticker-marker.patt">
-		  	<!-- here define the content to display on top of the marker -->
-		  	<a-box position='0 0.5 0' material='color: red;'></a-box>
-		  	<!-- <a-entity id="mod" gltf-model="#3dc" position="0 0 -5" scale="0.5 0.5 0.5" >
-			</a-entity> -->
+			<a-gltf-model id="mod" gltf-model="#3dc" position="0 0 1" rotation="-90 0 0" scale="1 1 1"></a-gltf-model animation-mixer>
 		</a-marker>
-		<!-- define a simple camera -->
 		<a-entity camera></a-entity>
-		<!-- <a-ring id="cursor" radius-inner="0.1" radius-outer="0.2" color="teal" position="0 -0.8 -5" rotation="-90 0 0"></a-ring>
-		<script type="text/javascript">
-			  function onSceneLoaded() {
-			    const raycaster = document.querySelector('[ar-raycaster]');
-			    const cursor = document.querySelector('#cursor');
-			    raycaster.addEventListener('raycaster-intersection', (event) => {
-			    	console.log(event.detail.intersections[0].point);
-			      	cursor.setAttribute('position', event.detail.intersections[0].point);
-			    });
-			  }
-			  const scene = document.querySelector('a-scene');
-			  scene.addEventListener('loaded', onSceneLoaded);
-
-		</script> -->
     </a-scene>
 </body>
 </html>
