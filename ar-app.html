@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="AJS_files/aframe.min.js"></script>
+<script src="ARJS_files/aframe-ar.js"></script>
+<!--<script>ARjs.Context.baseURL = '../../three.js/'</script>-->
+<a-scene embedded arjs='sourceType: webcam;'>
+<a-anchor hit-testing-enabled='true'>
+<!--add our model-->
+	<a-entity
+		position="0.5 -2 -0.5"
+		scale="0.10 0.10 0.10"
+		obj-model="obj: url(models/);">
+	</a-entity>
+
+	<a-marker-camera preset='hiro'></a-marker-camera>
+
+</a-anchor>
+	<a-camera-static/>
+</a-scene>
+</html>
+
+
+<!--<body style='margin : 0px; overflow: hidden;'>
+
+		<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+		<a-marker-camera preset='WB-sticker.jpg'></a-marker-camera>
+
+</body>-->
